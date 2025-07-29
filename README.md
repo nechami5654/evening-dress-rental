@@ -92,7 +92,7 @@ evening-dress-rental/
 ###  1. Clone the repository
 
 ```bash
-git clone https://github.com/Miri-Altman/evening-dress-rental.git
+git clone https://github.com/nechami5654/evening-dress-rental.git
 cd evening-dress-rental
 ```
 
@@ -103,14 +103,21 @@ cd server
 npm install
 ```
 
-###  3. Configure `.env`
+###  3. Configure environment variables
 
-Create a `.env` file inside `/server/` with:
+Configure environment variables
+Copy the example environment file and fill in your own credentials:
 
+```bash
+cp .env.example .env
 ```
-PORT=5000
-MONGO_URI=your-mongodb-uri
-JWT_SECRET=your-jwt-secret
+
+Edit `.env` and set your MongoDB URI, JWT secret, and PORT. Example `.env.example` contents:
+
+```bash
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname
+PORT=4000
+JWT_SECRET=your_jwt_secret_here
 ```
 
 ###  4. Run the server
