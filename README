@@ -1,0 +1,131 @@
+Evening Dress Rental – Fullstack Web Application
+A fullstack web application for managing and mediating evening dress rentals, built with vanilla JavaScript on the client side, Node.js and Express on the backend, and MongoDB as the database.
+
+Project Overview
+This platform supports multiple user roles with different permissions:
+
+Guest: Can browse dresses and filter results by color, price range, size combinations, rating, and location.
+
+Registered User: Can rate dresses (1–5 stars) and leave verified comments.
+
+Business Owner: Can add, update, delete, and manage their own dresses.
+
+The system enables users to efficiently search and filter evening dresses based on multiple criteria, providing a seamless rental experience.
+
+Technologies Used
+Client (Frontend)
+HTML5, CSS3
+
+Vanilla JavaScript (DOM manipulation, Fetch API)
+
+Server (Backend)
+Node.js with Express.js
+
+MongoDB with Mongoose ORM
+
+JWT Authentication for secure user login and role-based authorization
+
+dotenv for environment configuration
+
+Multer for image upload handling
+
+Custom middlewares for authentication, error handling, and security
+
+Architecture and Project Structure
+bash
+Copy
+Edit
+evening-dress-rental/
+├── client/
+│   ├── css/            # CSS stylesheets
+│   ├── html/           # HTML pages
+│   └── js/             # Client-side JavaScript scripts
+│
+├── server/
+│   ├── Controller/     # Business logic and route handlers
+│   ├── DB/             # Database connection and setup
+│   ├── MiddleWare/     # Middlewares (auth, error handling)
+│   ├── Model/          # Mongoose schemas and models
+│   ├── Routes/         # API route definitions
+│   ├── Services/       # Helper services (file upload, email, etc.)
+│   ├── uploads/        # Storage for uploaded dress images
+│   ├── express.js      # Express server setup and config
+│   └── .env            # Environment variables (excluded from Git)
+│
+├── .gitignore
+├── README.md
+Key Features
+Advanced Filtering: Search and filter dresses by color, price range, size combinations, rating, and geographic location.
+
+Detailed Dress View: Includes size options, price, location, user ratings, and comments.
+
+Star-based Rating System: Users can rate dresses on a scale of 1 to 5 stars.
+
+User Roles & Permissions:
+
+Business Owners can manage (add/update/delete) their own dresses.
+
+Registered Users can rate and comment on dresses.
+
+Guests can browse and filter dresses without authentication.
+
+JWT Authentication: Secure login and role-based access control.
+
+Image Uploads: Dress images are uploaded and stored securely.
+
+Verified User Comments: Comments are tied to authenticated users for trustworthiness.
+
+Intuitive UI: Easy-to-use frontend interface with real-time search and filtering.
+
+Authentication and Authorization
+Users register and login to receive a JWT token.
+
+Token must be included in the Authorization header (Bearer <token>) for protected API requests.
+
+Role-based permissions enforce access control to endpoints and actions.
+
+Getting Started
+Prerequisites
+Node.js (v14+ recommended)
+
+MongoDB instance (local or cloud)
+
+Installation
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/YourUsername/evening-dress-rental.git
+cd evening-dress-rental
+Install backend dependencies:
+
+bash
+Copy
+Edit
+cd server
+npm install
+Create a .env file in the server directory with the following content (update values accordingly):
+
+ini
+Copy
+Edit
+PORT=5000
+MONGO_URI=your-mongodb-connection-string
+JWT_SECRET=your-jwt-secret
+Run the server in development mode:
+
+bash
+Copy
+Edit
+npm run dev
+Open the client:
+
+Open client/html/index.html directly in your browser, or
+
+Serve the client folder using a live server extension for better experience.
+
+Contact
+For questions or feedback, feel free to reach out:
+Nechami Schwartz – Full Stack Developer
+Email: nechami5654@gmail.com

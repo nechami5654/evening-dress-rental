@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Env files
+.env
+
+# VSCode settings (לא חובה)
+.vscode/
+
+# Uploaded images
+server/uploads/
+
+# Logs
+*.log
