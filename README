@@ -1,243 +1,165 @@
-# **Evening Dress Rental - Fullstack Web Application**
+#  Evening Dress Rental – Fullstack Web App
 
-A comprehensive fullstack web application for managing and facilitating evening dress rentals, connecting dress owners with customers through an intuitive platform. Built with vanilla JavaScript, Node.js, Express, and MongoDB using **self-taught development** approach.
+A fullstack web platform for managing and mediating evening dress rentals. Built with **vanilla JavaScript** on the client side, **Node.js** and **Express.js** on the backend, and **MongoDB** as the database.
 
-## **Project Overview**
-
-This platform serves as a complete solution for evening dress rental services, supporting multiple user types and providing advanced filtering capabilities. The application enables seamless interaction between business owners and customers while maintaining high-quality user experience and data integrity.
-
-**Key Highlights:**
-* Complete self-taught development project - all technologies learned independently through online resources
-* Multi-role user system with JWT-based authentication
-* Advanced filtering and search capabilities
-* Real-time rating and feedback system
-* Responsive design with clean, user-friendly interface
-
-## **Technologies Used**
-
-### **Frontend (Client)**
-* **HTML5** - Semantic markup and structure
-* **CSS3** - Modern styling and responsive design
-* **Vanilla JavaScript** - DOM manipulation and dynamic interactions
-* **Fetch API** - Asynchronous data communication
-
-### **Backend (Server)**
-* **Node.js** - Runtime environment
-* **Express.js** - Web framework and API development
-* **MongoDB** - NoSQL database with advanced querying
-* **Mongoose** - MongoDB object modeling and validation
-* **JWT** - Authentication and authorization tokens
-* **Multer** - File upload handling for dress images
-* **dotenv** - Environment variables management
-
-### **Architecture**
-* **Layered Architecture:**
-  * **Client Layer** - User interface and interactions
-  * **API Layer** - RESTful endpoints and routing
-  * **Business Logic Layer** - Controllers and services
-  * **Data Access Layer** - Models and database operations
-* Principles:
-  * **Clean Code** practices
-  * **Separation of Concerns**
-  * **RESTful API** design
-  * **Error Handling** middleware
-
-## **User Roles & Permissions**
-
-| Role | Permissions |
-|------|-------------|
-| **Guest** | Browse dresses, apply filters by color/price/size/rating/location |
-| **Registered User** | All guest permissions + rate dresses (1-5 stars) + leave comments |
-| **Business Owner** | All user permissions + add/update/delete own dresses + manage inventory |
-
-## **Key Features**
-
-### ** Advanced Filtering System**
-* **Color-based filtering** - Find dresses by specific colors
-* **Price range selection** - Budget-friendly search options
-* **Size combinations** - Multiple size availability
-* **Rating-based sorting** - Quality-focused results
-* **Geographic location** - Area-specific searches
-
-### ** Rating & Review System**
-* Star-based rating system (1-5 scale)
-* Verified user comments and feedback
-* Average rating calculations
-* User engagement tracking
-
-### ** Business Management**
-* Dress inventory management for business owners
-* Image upload and management system
-* Real-time availability updates
-* Performance analytics and insights
-
-### ** Security & Authentication**
-* JWT-based secure authentication
-* Role-based access control
-* Protected API endpoints
-* Input validation and sanitization
-
-## **Project Structure**
-
-```
-evening-dress-rental/
-│
-├── client/                  # Frontend application
-│   ├── css/                # Stylesheets and responsive design
-│   ├── html/               # HTML pages and templates
-│   └── js/                 # Client-side JavaScript modules
-│
-├── server/                  # Backend application
-│   ├── Controller/         # Business logic and request handling
-│   ├── DB/                 # Database connection and configuration
-│   ├── MiddleWare/         # Authentication, validation, and error handling
-│   ├── Model/              # MongoDB schemas (Dress, User, Rating, Comment)
-│   ├── Routes/             # API endpoint definitions
-│   ├── Services/           # Helper services and utilities
-│   ├── uploads/            # Static file storage for dress images
-│   ├── express.js          # Server configuration and middleware setup
-│   └── .env               # Environment variables (excluded from Git)
-│
-├── .gitignore              # Git ignore patterns
-└── README.md              # Project documentation
-```
-
-## **API Endpoints**
-
-### **Authentication**
-```
-POST /api/auth/register     # User registration
-POST /api/auth/login        # User login
-POST /api/auth/logout       # User logout
-```
-
-### **Dresses**
-```
-GET    /api/dresses         # Get all dresses with filters
-GET    /api/dresses/:id     # Get specific dress details
-POST   /api/dresses         # Add new dress (Business owners only)
-PUT    /api/dresses/:id     # Update dress (Owner only)
-DELETE /api/dresses/:id     # Delete dress (Owner only)
-```
-
-### **Ratings & Comments**
-```
-POST /api/dresses/:id/rate     # Rate a dress
-POST /api/dresses/:id/comment  # Add comment
-GET  /api/dresses/:id/reviews  # Get all reviews
-```
-
-## **Getting Started**
-
-### **Prerequisites**
-* Node.js (v14 or higher)
-* MongoDB (local installation or cloud service)
-* Modern web browser
-
-### **Installation**
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Miri-Altman/evening-dress-rental.git
-   cd evening-dress-rental
-   ```
-
-2. **Install backend dependencies:**
-   ```bash
-   cd server
-   npm install
-   ```
-
-3. **Environment Setup:**
-   Create a `.env` file in the server directory:
-   ```env
-   PORT=5000
-   MONGO_URI=your-mongodb-connection-string
-   JWT_SECRET=your-jwt-secret-key
-   NODE_ENV=development
-   ```
-
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-5. **Launch the client:**
-   Open `client/html/index.html` in your browser or use Live Server for hot reload.
-
-### **Development Scripts**
-```bash
-npm start          # Production server
-npm run dev        # Development server with nodemon
-npm test           # Run test suite
-```
-
-## **Database Schema**
-
-### **User Model**
-* Authentication credentials
-* Role assignment (guest/user/business)
-* Profile information
-
-### **Dress Model**
-* Dress details (color, sizes, price)
-* Business owner reference
-* Location and availability
-* Image storage paths
-
-### **Rating Model**
-* User-dress rating relationships
-* Star ratings and comments
-* Timestamp tracking
-
-## **Development Approach**
-
-This project represents a **complete self-taught learning journey**, where all technologies, frameworks, and best practices were learned independently through:
-
-* **Online documentation** and official guides
-* **Community resources** and tutorials
-* **Hands-on experimentation** and problem-solving
-* **Real-world application** of theoretical concepts
-
-The development process emphasized:
-* **Clean, maintainable code** structure
-* **Layer separation** and modular design
-* **Comprehensive error handling**
-* **User experience** optimization
-* **Security best practices**
-
-## **Future Enhancements**
-
-* **Payment Integration** - Stripe/PayPal for rental transactions
-* **Real-time Chat** - Socket.io for user-business communication
-* **Advanced Analytics** - Business dashboard with insights
-* **Mobile App** - React Native companion application
-* **Email Notifications** - Automated booking confirmations
-* **Social Features** - User profiles and dress wishlists
-
-## **Contributing**
-
-This project welcomes contributions! Please feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## **License**
-
-This project is open-source under the **MIT License**. See `LICENSE` file for details.
-
-## **Contact**
-
-**Miri Altman** - Fullstack Developer  
- Email: [your-email@example.com]  
- LinkedIn: [Your LinkedIn Profile]  
- GitHub: [@Miri-Altman](https://github.com/Miri-Altman)
+Developed entirely through **independent self-learning**, utilizing online resources to master fullstack technologies.
 
 ---
 
-**Final Project Grade:** Excellent  
-*Built with dedication, self-learning, and modern web development practices*
+##  Project Overview
 
-> "Every expert was once a beginner. Every pro was once an amateur. Every icon was once an unknown." - This project represents the journey from learning to building.
+This platform supports three user roles:
+
+| Role            | Permissions                                                                 |
+|-----------------|----------------------------------------------------------------------------|
+| Guest           | Browse dresses and use advanced filters by color, price, size, rating, and location |
+| Registered User | Rate dresses (1–5 stars), leave verified comments                           |
+| Business Owner  | Add, update, delete, and manage their own dresses                           |
+
+---
+
+##  Key Features
+
+- Advanced dress filtering:
+  -  Color  
+  -  Price Range  
+  -  Size Combinations  
+  -  Rating  
+  -  Geographic Location
+- Detailed dress view with image, price, city, sizes, rating & comments
+- Secure **JWT-based authentication** & role-based permissions
+- Star-based rating system (1–5)
+- Business owner dashboard for dress management
+- Verified user comments and feedback
+- User-friendly, responsive design
+
+---
+
+##  Technologies Used
+
+###  Frontend
+
+- HTML5, CSS3  
+- JavaScript (DOM manipulation, Fetch API)
+
+###  Backend
+
+- Node.js with Express.js  
+- MongoDB with Mongoose  
+- JSON Web Tokens (JWT) – Auth & Authorization  
+- dotenv – Environment management  
+- Multer – File uploads (e.g., dress images)  
+- Custom Middlewares – Error handling, security  
+
+---
+
+##  Project Structure
+
+```
+evening-dress-rental/
+├── client/
+│   ├── css/            # CSS stylesheets
+│   ├── html/           # HTML pages
+│   └── js/             # Client-side JS
+│
+├── server/
+│   ├── Controller/     # Logic for users, dresses, etc.
+│   ├── DB/             # MongoDB connection
+│   ├── MiddleWare/     # Authentication & error handling
+│   ├── Model/          # Mongoose schemas (User, Dress, Rating)
+│   ├── Routes/         # API routing
+│   ├── Services/       # Helper services (email, file mgmt)
+│   ├── uploads/        # Uploaded dress images
+│   ├── express.js      # Server setup
+│   └── .env            # Environment config (not committed)
+├── .gitignore
+├── README.md
+```
+
+---
+
+##  Authentication & Authorization
+
+- Users register/login to receive a JWT token  
+- Token must be sent via `Authorization: Bearer <token>` header  
+- Role-based access ensures protected routes for business users  
+- Middleware validation for secure endpoints  
+
+---
+
+##  Getting Started
+
+###  1. Clone the repository
+
+```bash
+git clone https://github.com/Miri-Altman/evening-dress-rental.git
+cd evening-dress-rental
+```
+
+###  2. Install backend dependencies
+
+```bash
+cd server
+npm install
+```
+
+###  3. Configure `.env`
+
+Create a `.env` file inside `/server/` with:
+
+```
+PORT=5000
+MONGO_URI=your-mongodb-uri
+JWT_SECRET=your-jwt-secret
+```
+
+###  4. Run the server
+
+```bash
+npm run dev
+```
+
+###  5. Open the frontend
+
+Open `client/html/index.html` in your browser  
+Or serve using the Live Server extension
+
+---
+
+##  Roles & Permissions
+
+| Role            | Capabilities                                                            |
+|-----------------|-------------------------------------------------------------------------|
+| Guest           | Browse dresses, use filters                                             |
+| Registered User | Rate and comment on dresses                                             |
+| Business Owner  | Add/update/delete own dresses                                           |
+
+---
+
+##  Feature Highlights
+
+-  Filter dresses dynamically
+-  Upload dress images via Multer
+-  Role-based route protection
+-  Clean code with separation of concerns
+-  Auth middleware for secure access
+-  Star rating and comment system with user validation
+
+---
+
+##  License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+##  About the Developer
+
+Developed as a **self-learning** final project  
+ **Contact**: nechami5654@gmail.com  
+ Final grade: 100  
+Built with passion, real-world architecture, and modern development practices 
+
+---
+
+> _“Learning by doing is the best way to master development.”_
